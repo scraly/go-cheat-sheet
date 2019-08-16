@@ -1,6 +1,13 @@
 # About Go modules
 
-xxx
+A module is a collection of related Go packages that are versioned together as a single unit.
+Modules record precise dependency requirements and create reproducible builds.
+
+Summarizing the relationship between repositories, modules, and packages:
+
+* A repository contains one or more Go modules.
+* Each module contains one or more Go packages.
+* Each package consists of one or more Go source files in a single directory.
 
 ## Initialize a new Go module
 
