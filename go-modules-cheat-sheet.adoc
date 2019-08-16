@@ -1,0 +1,55 @@
+= Go Modules CLI Cheat Sheet
+Aurélie Vache <https://twitter.com/aurelievache>
+:author: Aurélie Vache
+:authorbio: Cloud Dev(Ops) at Continental
+:pdf-width: 508mm
+:pdf-height: 361mm
+:version: v1.0.0
+
+== About Go modules
+
+Terraform, a tool created by https://www.hashicorp.com/[Hashicorp] in 2014,
+written in Go, aims to build, change and version control your infrastructure.
+This tool have a powerfull and very intuitive Command Line Interface.
+
+== Initialize a new Go module
+
+You need to execute this command outside GOPATH!
+
+....
+$ go mod init github.com/scraly/myproject
+....
+
+== Vendor your modules
+
+....
+$ go mod vendor
+....
+
+go build -mod vendor -ldflags "${ldflags}" -o bin/mymicroservice${ext} ${repo_path}
+
+== Clean up dependencies
+
+....
+$ go mod tidy
+....
+
+== View final versions
+
+They will be used in a build for all direct and indirect dependencies 
+
+....
+go list -m all
+....
+
+== View available minor and patch upgrades for all direct and indirect dependencies
+
+....
+go list -u -m all — 
+....
+
+== xx
+
+go list -m -versions my/go/module
+
+go mod why
